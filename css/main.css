@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #001E3E;
+    --secondary-color: #0077b6;
+    --additional-color: #003D6C;
+    --shadow-color: #000;
+    --text-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto';
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--additional-color), var(--primary-color));
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 120px;
+}
+
+.app .apps {
+    width: 300px;
+    height: 70px;
+    color: var(--text-color);
+    background-color: var(--additional-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.app .apps div {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    height: 100%;
+    width: 45%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s ease;
+    cursor: pointer;
+}
+
+.app .apps div.active {
+    background-color: transparent;
+    cursor: default;
+}
+
+.app .app-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.app .app-body .in-field, .app .app-body .out-field {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app .app-body .field {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.app .app-body .field textarea {
+    resize: none;
+    width: 100%;
+    height: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--additional-color);
+    color: var(--text-color);
+    font-size: 20px;
+    font-family: 'abba-iwannyc';
+}
+
+.app .app-body .field textarea::-webkit-scrollbar {
+    width: 3px;
+}
+
+.app .app-body .field textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.app .app-body .field textarea::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+}
+
+.app .app-body .field .field-control {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+
+.app .app-body .field .field-control button, .app .app-body .field .field-control .custom-select {
+    width: 49%;
+    background-color: var(--additional-color);
+    color: var(--text-color);
+    font-size: 15px;
+    letter-spacing: 1px;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.app .convertor-app .out-field .field-control button, .app .convertor-app .out-field .field-control .custom-select {
+    width: calc(97% / 3);
+}
+
+.app .app-body .field .field-control .custom-select {
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+}
+
+.app .app-body .field .field-control .custom-select .select-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.app .app-body .field .field-control .custom-select .arrow i {
+    transition: 0.5s ease;
+}
+
+.app .app-body .field .field-control .custom-select .arrow .rotate {
+    transform: rotate(-180deg);
+    transition: 0.5s ease;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: unset;
+    max-height: 144px;
+    overflow-y: auto;
+    background-color: var(--additional-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.app .app-body .field .field-control .custom-select .hidden {
+    transform: scaleY(0);
+    transform-origin: top;
+    margin-top: -10px;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown::-webkit-scrollbar {
+    width: 3px;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown li {
+    padding: 7px 5px;
+    margin: 2px 0;
+    font-size: 10px;
+    list-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown li.selected {
+    background-color: var(--secondary-color);
+}
+
+.app .app-body .field .field-control .custom-select .hidden li {
+    font-size: 0;
+    padding: 0;
+    transition: 0.5s ease;
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown li:hover {
+    background-color: var(--secondary-color);
+}
+
+.app .app-body .field .field-control .custom-select .select-dropdown li .font-name {
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+.app .app-body .field .field-control .custom-select .hidden li .font-name {
+    font-size: 0;
+    transition: 0.5s ease;
+}
+
+.app .disabled {
+    background-color: var(--primary-color) !important;
+    cursor: default !important;
+}
