@@ -28,5 +28,6 @@ const exps = [
     [ /=a=l/igm, 'allylouia'],
     [ /(}|]);e`?otokoc/igm, '};e`otokoc'],
     [ /(\+\s|\+)/igm, ''],
+    [ /\s+\./gm, '.'],
     [ /\s+/igm, ' '],
 ];
