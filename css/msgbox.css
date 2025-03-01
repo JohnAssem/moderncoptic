@@ -1,0 +1,94 @@
+:root {
+    --defult-padding: 20px;
+}
+
+.alert-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: var(--primary-color);
+    border: var(--secondary-color) solid 2px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: var(--defult-padding);
+    z-index: 1000;
+}
+
+.alert-box i {
+    font-size: 50px;
+    color: var(--secondary-color);
+}
+
+.alert-box p {
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.alert-box button {
+    width: 65px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.error-box {
+    border-color: #f00000;
+}
+
+.error-box i {
+    color: #f00000;
+}
+
+.password-check-box h3, .prompt-box h3 {
+    margin-top: 7px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.password-check-box input, .prompt-box input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    background-color: var(--additional-color);
+    border-radius: 3px;
+    color: var(--text-color);
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+.password-check-box .wrong-password , .prompt-box .wrong-password {
+    display: none;
+    color: #f00000;
+    width: 100%;
+    text-align: start;
+    font-size: 12px;
+    margin-top: -15px;
+}
+
+.password-check-box .btns, .prompt-box .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.password-check-box .btns button, .prompt-box .btns button {
+    width: 65px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
