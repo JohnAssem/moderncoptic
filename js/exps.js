@@ -1,5 +1,7 @@
 const exps = [
-    [ /@/gm, ' @ '],
+    [/@/gm, ' @ '],
+    [/(?<=[a-z])(`|~)[iI]\s/gm, '`i '],
+    [/(?<=[a-z])(`|~)[iI]\./gm, '`i.'],
     [ /(=e=;=u|`?e;ouab)/igm, '`e;ouab'],
     [ /(`?~?P=o=c|`?~?P¡)/gm, '~P[oic'],
     [ /\sP\[oic/gm, ' ~P[oic'],
