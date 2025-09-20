@@ -1,0 +1,49 @@
+:root {
+    --primary-color: #1978e5;
+    --bg: #111418;
+    --surface: #1c2126;
+    --border: #293038;
+    --text-primary: #ffffff;
+    --text-secondary: #9daab8;
+    --accent: #3c4753;
+    --danger: #dc3546;
+    --success: #27a844;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter', 'roboto', sans-serif;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    width: 100vw;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+    background-color: transparent;
+    transition: 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-button {
+    background-color: transparent;
+    height: 4px;
+}
+
+:active::-webkit-scrollbar-thumb , :focus::-webkit-scrollbar-thumb {
+    background-color: var(--text-secondary);
+}

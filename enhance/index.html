@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/png-icon">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/enhance-convert.css">
+    <link rel="stylesheet" href="../css/sidebar-menu.css">
+    <title>Modern Coptic</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="left">
+                <div class="bar-icon" id="menuBarIcon">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <a href="../" class="app-name">
+                    <img src="../assets/img/logo.png" alt="logo" class="logo">
+                    <h1 class="app-title">Modern Coptic</h1>
+                </a>
+            </div>
+
+            <div class="right">
+                <div class="help">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="container-body">
+            <div class="sidebar-menu minimized" id="sidebarMenu">
+                <div class="menu-body">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="../enhance/" class="menu-item active">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                    <span>Enhancer</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../convert/" class="menu-item">
+                                    <i class="fa-solid fa-right-left"></i>
+                                    <span>Convertor</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../about/" class="menu-item">
+                                    <i class="fa-regular fa-circle-info"></i>
+                                    <span>About</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="menu-footer">
+                            <a href="../" class="menu-item home-link">
+                                <i class="fa-solid fa-house"></i>
+                                <span>Home</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <main>
+                <div class="input">
+                    <h3>Input</h3>
+                    <textarea name="inputField" id="inputField" placeholder="Enter your text here..."></textarea>
+                    <div class="input-controls controls">
+                        <div class="custom-select">
+                            <button class="select-button disabled" id="enhanceFont" value="abba-iwannyc">
+                                <span class="selected-value">Abba Iwannyc</span>
+                                <span class="arrows">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                            </button>
+                            <ul class="select-dropdown hidden" id="enhanceFontList">
+                                <li class="selected"><span class="font-name">Abba Iwannyc</span> (standard type)</li>
+                                <li><span class="font-name">CS New Athanasius</span> (standard type)</li>
+                                <li><span class="font-name">Avva Shenouda</span></li>
+                                <li><span class="font-name">Athanasius</span></li>
+                            </ul>
+                        </div>
+                        <div class="controls">
+                            <button class="clear-button control-button" id="clear">
+                                <i class="fa-regular fa-trash-can"></i>
+                                <span>Clear</span>
+                            </button>
+                            <button class="paste-button control-button" id="paste">
+                                <i class="fa-regular fa-clipboard"></i>
+                                <span>Paste</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="output-options">
+                        <h6>Output Options</h6>
+                        <div class="options">
+                            <div class="option">
+                                <input type="checkbox" name="removeNewlineCheck" id="removeNewlineCheck">
+                                <label for="removeNewlineCheck">Remove new lines from the source</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="spaceTabCheck" id="spaceTabCheck">
+                                <label for="spaceTabCheck">Add space before the first letter of each paragraph</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="newLineCheck" id="newLineCheck">
+                                <label for="newLineCheck">Add new line after each sentence</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="sentence2ParagraphCheck" id="sentence2ParagraphCheck">
+                                <label for="sentence2ParagraphCheck">Output each sentence as a separate
+                                    paragraph</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="foot2ParagraphCheck" id="foot2ParagraphCheck">
+                                <label for="foot2ParagraphCheck">Add new line after each foot</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="converting">
+                        <div class="converting-mode">
+                            <h6>Converting Mode</h6>
+                            <div class="converting-mode-controls">
+                                <div class="converting-mode-options">
+                                    <div class="option">
+                                        <input type="radio" name="convertingMode" id="auto" value="auto" checked>
+                                        <label for="auto">Auto</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio" name="convertingMode" value="manual" id="manual">
+                                        <label for="manual">Manual</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button class="convert-button control-button" id="convert">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>Enhance</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="output">
+                    <h3>Output</h3>
+                    <textarea name="outputField" id="outputField" placeholder="Enhanced text will appear here..."
+                        disabled></textarea>
+                    <div class="separated-paragraphs" id="separatedParagraphsContainer"></div>
+
+                    <div class="output-controls controls">
+                        <button class="main-download-button control-button" id="mainDownload">
+                            <i class="fa-solid fa-down-to-line"></i>
+                            <span>Download</span>
+                        </button>
+                        <button class="main-copy-button control-button" id="mainCopy">
+                            <i class="fa-regular fa-copy"></i>
+                            <span>Copy All</span>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+    <script src="../js/exps.js"></script>
+    <script src="../js/enhance.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/sidebar-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: var(--border) 1px solid;
+}
+
+.container header i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container header .left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.container header .app-name {
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container header .logo {
+    width: 24px;
+    height: 24px;
+}
+
+.container header .app-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.container .container-body {
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+}
+
+.container main {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.container main :where(.input, .output) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--surface);
+    border: var(--border) 1px solid;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container main .input {
+    margin-bottom: 20px;
+}
+
+.container main textarea {
+    width: 100%;
+    min-height: 200px;
+    flex-grow: 1;
+    background-color: transparent;
+    border: var(--accent) 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text-primary);
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    overflow-y: auto;
+    transition: 1s ease;
+}
+
+.container main textarea:focus {
+    border: var(--primary-color) 1px solid;
+}
+
+.container main textarea::selection, .container main input::selection {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+.container main .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container main .input-controls{
+    gap: 15px;
+}
+
+.container main .controls .custom-select {
+    flex-grow: 1;
+    position: relative;
+}
+
+.container main .controls .custom-select .select-button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: var(--accent) 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text-primary);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.container main .disabled {
+    color: var(--text-secondary) !important;
+    border: var(--border) 1px solid !important;
+    cursor: not-allowed !important;
+}
+
+.container main .controls .custom-select .select-button .arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container main .controls .custom-select .select-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 14px;
+    background-color: var(--surface);
+    border: var(--accent) 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: 0.3s ease;
+    z-index: 1;
+}
+
+.container main .controls .custom-select .select-dropdown.hidden {
+    transform: scaleY(0);
+}
+
+.container main .controls .custom-select .select-dropdown li {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: 0.3s ease;
+}
+
+.container main .controls .custom-select .select-dropdown li:hover {
+    background-color: var(--primary-color);
+}
+
+.container main .controls .custom-select .select-dropdown li.selected {
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+.container main .controls .arrow-icon {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.container main .controls :where(.clear-button, .paste-button) {
+    background-color: var(--primary-color);
+    border: var(--primary-color) 1px solid;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.container main .controls .clear-button {
+    background-color: var(--accent);
+    border: var(--accent) 1px solid;
+}
+
+.container main .controls :where(.clear-button, .paste-button) i {
+    font-size: 16px;
+}
+
+.container main .controls .paste-button:hover {
+    background-color: transparent;
+    border: var(--primary-color) 1px solid;
+    color: var(--primary-color);
+}
+
+.container main .controls .clear-button:hover {
+    background-color: var(--danger);
+    border: var(--danger) 1px solid;
+}
+
+.container main .output-options, .container main .converting-mode {
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.container main .output-options h6, .container main .converting-mode h6 {
+    font-size: 12px;
+}
+
+.container main .output-options .options, .container main .converting-mode .converting-mode-options {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.container main .option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.container main .option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--surface);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    position: relative;
+}
+
+.container main .option input[type="checkbox"]::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 20%, 80% 0%, 43% 62%);
+    background-color: var(--text-primary); /* checkmark color */
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+.container main .option input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.container main .option input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.container main .option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--surface);
+    margin: 0;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    position: relative;
+}
+
+.container main .option input[type="radio"]::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-primary);
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+.container main .option input[type="radio"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.container main .option input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.container main .option label {
+    cursor: pointer;
+}
+
+.container main .converting-mode .converting-mode-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container main .converting-mode .converting-mode-options {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.container main .converting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.container main .converting button {
+    background-color: var(--primary-color);
+    border: var(--primary-color) 1px solid;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    visibility: hidden;
+}
+
+
+.container main .converting button:hover {
+    background-color: var(--surface);
+    border: var(--primary-color) 1px solid;
+    color: var(--primary-color);
+}
+
+.container main .output .separated-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.container main .output .separated-paragraph {
+    display: flex;
+    gap: 5px;
+    background-color: var(--bg);
+    border: var(--border) 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: inherit;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: 0.5s ease;
+}
+
+.container main .output .separated-paragraph.deleted {
+    transform: scaleX(0);
+}
+
+.container main .output .separated-paragraph.deleted .button {
+    visibility: hidden;
+}
+
+.container main .output .separated-paragraph .separated-paragraph-text {
+    flex-grow: 1;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    user-select: text;
+    cursor: text;
+    padding: 0;
+    font-family: inherit;
+}
+
+.container main .output .separated-paragraph .separated-paragraph-text::selection {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+.container main .output .separated-paragraph-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.container main .output .separated-paragraph .button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--accent) 1px solid;
+    border-radius: 5px;
+    background-color: var(--accent);
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.container main .output .separated-paragraph .delete-button:hover {
+    background-color: var(--danger);
+    border: var(--danger) 1px solid;
+}
+
+.container main .output .separated-paragraph .copy-button {
+    background-color: var(--primary-color);
+    border: var(--primary-color) 1px solid;
+}
+
+.container main .output .separated-paragraph .copy-button:hover {
+    border: var(--primary-color) 1px solid;
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.container main .output .controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.container main .output .controls button {
+    background-color: var(--primary-color);
+    border: var(--primary-color) 1px solid;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.container main .output .controls button:hover {
+    background-color: var(--surface);
+    border: var(--primary-color) 1px solid;
+    color: var(--primary-color);
+}
+
+.container main .output .controls .main-download-button {
+    background-color: var(--accent);
+    border: var(--accent) 1px solid;
+}
+
+.container main .output .controls .main-download-button:hover {
+    background-color: transparent;
+    border: var(--accent) 1px solid;
+    color: var(--accent);
+}
+
+@media screen and (max-width: 512px) {
+    .container .control-button span {
+        display: none;
+    }
+
+    .container main .input-controls {
+        flex-direction: column;
+    }
+
+    .container main .input-controls .custom-select {
+        width: 100%;
+    }
+
+    .container  main .output .controls {
+        justify-content: center;
+    }
+}

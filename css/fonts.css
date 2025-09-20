@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'inter';
+    src: url('../assets/fonts/english/Inter-VariableFont.ttf');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assets/fonts/english/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'abba-iwannyc';
+    src: url('../assets/fonts/coptic/Abba\ Iwannyc\ -\ Regular.ttf');
+}
+
+@font-face {
+    font-family: 'athanasius';
+    src: url('../assets/fonts/coptic/Athanasius.ttf');
+}
+
+@font-face {
+    font-family: 'cs-new-athanasius';
+    src: url('../assets/fonts/coptic/CS\ New\ Athanasius.ttf');
+}
+
+@font-face {
+    font-family: 'avva-shenouda';
+    src: url('../assets/fonts/coptic/Avva_Shenouda.ttf');
+}
